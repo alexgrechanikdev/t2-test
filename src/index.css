@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Exo";
+  src: url("./assets/fonts/Exo.otf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("./assets/images/Pattern.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
