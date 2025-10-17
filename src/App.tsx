@@ -90,25 +90,31 @@ function App() {
     <div className="gradient">
       <Container>
         <div className="inner_wrapper">
-          <div className="page_title_wrapper">
-            <h1 className="page_title">Ты сегодня покормил кота?</h1>
-          </div>
-          <div className="cards_wrapper">
-            {products.map((item) => (
-              <ProductCard
-                key={item.id}
-                {...item}
-                onClick={
-                  item.status === STATUS_DISABLED
-                    ? undefined
-                    : () => handleClick(item)
-                }
-                isHovered={shouldApplyHover(item.id)}
-                onMouseEnter={() => handleMouseEnter(item.id)}
-                onMouseLeave={() => handleMouseLeave(item.id)}
-              />
-            ))}
-          </div>
+          {products.length ? (
+            <>
+              <div className="page_title_wrapper">
+                <h1 className="page_title">Ты сегодня покормил кота?</h1>
+              </div>
+              <div className="cards_wrapper">
+                {products.map((item) => (
+                  <ProductCard
+                    key={item.id}
+                    {...item}
+                    onClick={
+                      item.status === STATUS_DISABLED
+                        ? undefined
+                        : () => handleClick(item)
+                    }
+                    isHovered={shouldApplyHover(item.id)}
+                    onMouseEnter={() => handleMouseEnter(item.id)}
+                    onMouseLeave={() => handleMouseLeave(item.id)}
+                  />
+                ))}
+              </div>
+            </>
+          ) : (
+            <p className="loader">LOADING...</p>
+          )}
         </div>
       </Container>
     </div>

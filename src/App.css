@@ -39,3 +39,8 @@
   flex-wrap: wrap;
   width: 100%;
 }
+
+.loader {
+  font-size: 48px;
+  color: var(--weight-text-color);
+}
